@@ -31,7 +31,6 @@ function populatePage(categories,types,products,selected){
 	var currentId;
 	var container =$("#container");
 	var htmlText="";
-	var currentProduct;
 	products.forEach(function(product){
 		for(var key in product){
 			currentId=product[key].id;
@@ -42,20 +41,16 @@ function populatePage(categories,types,products,selected){
 		types.forEach(function(type){
 
 			if(product[key].type===type.id){
-				
+
 				htmlText+=`<div class="typename">${type.name}</div>`;
 				htmlText+=`<div class="typedescription">${type.description}</div>`;
 			
 				categories.forEach(function(category){
 					
-					console.log(currentId);
 					if(type.category===category.id){
 						htmlText+=`<div class="categoryname">${category.name}</div>`;
 						htmlText+=`</div>`;
 						container.html(htmlText);
-						currentProduct=$(`#${currentId}`);
-						currentProduct.hide();
-
 						
 					}
 
@@ -64,15 +59,17 @@ function populatePage(categories,types,products,selected){
 			}
 
 		});
-
-	
 		
-	}
-
-	    
+	}    
 		
 	});
-		
-		
-
+	var productCards= $(".product");
+	console.log();
+	for(var i=0;i<productCards.find(".categoryname").length;i++){
+		if(productCards.find(".categoryname")[i].innerText===selected){
+			$(productCards[i]).show();
+		}
+		else{$(productCards[i]).hide();}
+	}
+				
 }
