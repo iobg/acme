@@ -6,5 +6,13 @@
             "name": "Fairy Sparklers",
             "description": "Multi-colored sparklers that are safe for any age."
         }
+    },
+{
+        "dynamite": {
+            "id": 1,
+            "type": 1,
+            "name": "Dynamite",
+            "description": "Packs a punch"
+        }
     }]
 }

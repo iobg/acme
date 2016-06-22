@@ -1,7 +1,7 @@
 "use strict";
 var ajaxCalls=function(ajax){
+	
 ajax.loadCategories=function(){
-
 return new Promise(function(resolve,reject){
 $.ajax({
 	url: "categories.json"
