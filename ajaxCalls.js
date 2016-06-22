@@ -2,30 +2,30 @@
 var ajaxCalls=function(ajax){
 ajax.loadCategories=function(){
 
-return $.ajax({
+return new Promise(function(resolve,reject){
+$.ajax({
 	url: "categories.json"
 }).done(function(result){
-	return new Promise(function(resolve,reject){
 		resolve(result);
 	});
 });
 };
 
 ajax.loadProducts=function(){
-return $.ajax({
+return new Promise(function(resolve,reject){
+ $.ajax({
 	url: "products.json"
 }).done(function(result){
-	return new Promise(function(resolve,reject){
 		resolve(result);
 	});
 });
 };
 
 ajax.loadTypes=function(){
-return $.ajax({
+return new Promise(function(resolve,reject){
+ $.ajax({
 	url: "types.json"
 }).done(function(result){
-	return new Promise(function(resolve,reject){
 		resolve(result);
 	});
 });
